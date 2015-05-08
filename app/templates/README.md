@@ -1,14 +1,16 @@
-# <%= props.slugname %> [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][gemnasium-image]][gemnasium-url]
+
+# <%= props.slugname %>
 
 > <%= props.description %>
-
 
 ## Install
 
 ```sh
 $ npm install --save <%= slugname %>
 ```
-
 
 ## Usage
 
@@ -34,9 +36,13 @@ $ npm run browser
 <%= props.license %> © [<%= props.authorName %>](<%= props.authorUrl %>)
 
 
-[npm-image]: https://badge.fury.io/js/<%= slugname %>.svg
+[npm-image]: https://img.shields.io/npm/v/<%= slugname %>.svg
 [npm-url]: https://npmjs.org/package/<%= slugname %>
-[travis-image]: https://travis-ci.org/<%= props.githubUsername %>/<%= slugname %>.svg?branch=master
+
 [travis-url]: https://travis-ci.org/<%= props.githubUsername %>/<%= slugname %>
-[daviddm-image]: https://david-dm.org/<%= props.githubUsername %>/<%= slugname %>.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/<%= props.githubUsername %>/<%= slugname %>
+[travis-image]: https://img.shields.io/travis/<%= props.githubUsername %>/<%= slugname %>.svg
+
+[gemnasium-image]: https://img.shields.io/gemnasium/<%= props.githubUsername %>/<%= slugname %>.svg
+[gemnasium-url]: https://gemnasium.com/<%= props.githubUsername %>/<%= slugname %>
+
+
