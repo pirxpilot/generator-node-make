@@ -2,7 +2,6 @@
 var path = require('path');
 var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
-var shelljs = require('shelljs');
 
 describe('node generator', function () {
   beforeEach(function (done) {

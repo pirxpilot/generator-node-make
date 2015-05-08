@@ -1,17 +1,22 @@
 {
-  "name": "generator-node",
-  "version": "0.7.0",
-  "description": "Create a Node.js module",
+  "name": "generator-node-make",
+  "version": "0.0.1",
+  "description": "Create a Node.js module with Makefile",
   "keywords": [
     "yeoman-generator",
     "scaffold",
     "node",
     "module",
-    "cli"
+    "make",
+    "Makefile"
   ],
-  "author": "Yeoman team",
+  "author": {
+    "name": "Damian Krzeminski",
+    "email": "pirxpilot@code42day.com",
+    "url": "https://pirxpilot.me"
+  },
   "main": "app",
-  "repository": "yeoman/generator-node",
+  "repository": "pirxpilot/generator-node-make",
   "scripts": {
     "test": "mocha --timeout 50000"
   },
@@ -20,9 +25,7 @@
     "yeoman-generator": "^0.18.3"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "mocha": "*",
-    "shelljs": "^0.4.0"
+    "mocha": "*"
   },
   "engines": {
     "node": ">=0.10.0",
