@@ -2,6 +2,7 @@
 var path = require('path');
 var npmName = require('npm-name');
 var yeoman = require('yeoman-generator');
+var gitConfig = require('git-config');
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
@@ -10,6 +11,7 @@ module.exports = yeoman.generators.Base.extend({
       this.yeoman +
       '\nThe name of your project shouldn\'t contain "node" or "js" and' +
       '\nshould be a unique ID not already in use at npmjs.org.');
+    this.gitConfig = gitConfig.sync();
   },
   askForModuleName: function () {
     var done = this.async();
@@ -68,18 +70,22 @@ module.exports = yeoman.generators.Base.extend({
     }, {
       name: 'githubUsername',
       message: 'GitHub username or organization',
+      default: this.gitConfig.github.user,
       store: true
     }, {
       name: 'authorName',
       message: 'Author\'s Name',
+      default: this.gitConfig.user.name,
       store: true
     }, {
       name: 'authorEmail',
+      default: this.gitConfig.user.email,
       message: 'Author\'s Email',
       store: true
     }, {
       name: 'authorUrl',
       message: 'Author\'s Homepage',
+      default: this.gitConfig.user.homepage,
       store: true
     }, {
       name: 'keywords',
