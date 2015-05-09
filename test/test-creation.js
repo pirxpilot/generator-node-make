@@ -31,7 +31,7 @@ describe('node generator', function () {
       '.editorconfig',
       'Makefile',
       'package.json',
-      'README.md'
+      'Readme.md'
     ];
 
     helpers.mockPrompt(this.app, {

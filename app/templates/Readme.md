@@ -2,9 +2,9 @@
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][gemnasium-image]][gemnasium-url]
 
-# <%= props.slugname %>
+# <%= slugname %>
 
-> <%= props.description %>
+<%= props.description %>
 
 ## Install
 
@@ -30,11 +30,9 @@ $ <%= slugname %> --help
 $ npm run browser
 ```<% } %>
 
-
 ## License
 
 <%= props.license %> © [<%= props.authorName %>](<%= props.authorUrl %>)
-
 
 [npm-image]: https://img.shields.io/npm/v/<%= slugname %>.svg
 [npm-url]: https://npmjs.org/package/<%= slugname %>
@@ -44,5 +42,3 @@ $ npm run browser
 
 [gemnasium-image]: https://img.shields.io/gemnasium/<%= props.githubUsername %>/<%= slugname %>.svg
 [gemnasium-url]: https://gemnasium.com/<%= props.githubUsername %>/<%= slugname %>
-
-
