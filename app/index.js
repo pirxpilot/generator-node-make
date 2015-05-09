@@ -131,6 +131,7 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('travis.yml', '.travis.yml');
 
     this.template('Readme.md', 'Readme.md');
+    this.template('History.md', 'History.md');
     this.template('Makefile', 'Makefile');
     this.template('_package.json', 'package.json');
 
