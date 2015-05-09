@@ -87,10 +87,12 @@ module.exports = yeoman.generators.Base.extend({
     }, {
       type: 'confirm',
       name: 'cli',
+      default: false,
       message: 'Do you need a CLI?'
     }, {
       type: 'confirm',
       name: 'browser',
+      default: false,
       message: 'Do you need Browserify?'
     }];
 
@@ -119,11 +121,11 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
     this.copy('gitignore', '.gitignore');
-    this.copy('gitattributes', '.gitattributes');
+    this.copy('npmignore', '.npmignore');
     this.copy('travis.yml', '.travis.yml');
 
     this.template('README.md', 'README.md');
-    this.template('Gruntfile.js', 'Gruntfile.js');
+    this.template('Makefile', 'Makefile');
     this.template('_package.json', 'package.json');
 
     if (this.props.cli) {
@@ -133,14 +135,13 @@ module.exports = yeoman.generators.Base.extend({
 
   projectfiles: function () {
     this.template('index.js', 'index.js');
+    this.mkdir('lib');
+    this.copy('lib/slugname.js', 'lib/' + this.slugname + '.js');
     this.mkdir('test');
     this.template('test/test.js', 'test/test.js');
   },
 
   install: function () {
-    this.installDependencies({
-      bower: false,
-      skipInstall: this.options['skip-install']
-    });
+    this.npmInstall('mocha should jshint', { 'saveDev': true });
   }
 });
