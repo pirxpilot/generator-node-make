@@ -2,6 +2,7 @@
 var path = require('path');
 var npmName = require('npm-name');
 var yeoman = require('yeoman-generator');
+var gitConfig = require('git-config');
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
@@ -10,6 +11,7 @@ module.exports = yeoman.generators.Base.extend({
       this.yeoman +
       '\nThe name of your project shouldn\'t contain "node" or "js" and' +
       '\nshould be a unique ID not already in use at npmjs.org.');
+    this.gitConfig = gitConfig.sync();
   },
   askForModuleName: function () {
     var done = this.async();
@@ -68,29 +70,31 @@ module.exports = yeoman.generators.Base.extend({
     }, {
       name: 'githubUsername',
       message: 'GitHub username or organization',
-      store: true
+      default: this.gitConfig.github.user,
     }, {
       name: 'authorName',
       message: 'Author\'s Name',
-      store: true
+      default: this.gitConfig.user.name,
     }, {
       name: 'authorEmail',
+      default: this.gitConfig.user.email,
       message: 'Author\'s Email',
-      store: true
     }, {
       name: 'authorUrl',
       message: 'Author\'s Homepage',
-      store: true
+      default: this.gitConfig.user.homepage,
     }, {
       name: 'keywords',
       message: 'Key your keywords (comma to split)'
     }, {
       type: 'confirm',
       name: 'cli',
+      default: false,
       message: 'Do you need a CLI?'
     }, {
       type: 'confirm',
       name: 'browser',
+      default: false,
       message: 'Do you need Browserify?'
     }];
 
@@ -119,11 +123,12 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
     this.copy('gitignore', '.gitignore');
-    this.copy('gitattributes', '.gitattributes');
+    this.copy('npmignore', '.npmignore');
     this.copy('travis.yml', '.travis.yml');
 
-    this.template('README.md', 'README.md');
-    this.template('Gruntfile.js', 'Gruntfile.js');
+    this.template('Readme.md', 'Readme.md');
+    this.template('History.md', 'History.md');
+    this.template('Makefile', 'Makefile');
     this.template('_package.json', 'package.json');
 
     if (this.props.cli) {
@@ -133,14 +138,13 @@ module.exports = yeoman.generators.Base.extend({
 
   projectfiles: function () {
     this.template('index.js', 'index.js');
+    this.mkdir('lib');
+    this.copy('lib/slugname.js', 'lib/' + this.slugname + '.js');
     this.mkdir('test');
-    this.template('test/test.js', 'test/test.js');
+    this.template('test/slugname.js', 'test/' + this.slugname + '.js');
   },
 
   install: function () {
-    this.installDependencies({
-      bower: false,
-      skipInstall: this.options['skip-install']
-    });
+    this.npmInstall('mocha should jshint', { 'saveDev': true });
   }
 });

@@ -2,7 +2,6 @@
 var path = require('path');
 var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
-var shelljs = require('shelljs');
 
 describe('node generator', function () {
   beforeEach(function (done) {
@@ -12,7 +11,7 @@ describe('node generator', function () {
         return;
       }
 
-      this.app = helpers.createGenerator('node:app', [
+      this.app = helpers.createGenerator('node-make:app', [
         '../../app'
       ]);
       this.app.options['skip-install'] = true;
@@ -20,56 +19,19 @@ describe('node generator', function () {
     }.bind(this));
   });
 
-  it('creates expected files', function (done) {
-    var expected = [
-      'index.js',
-      'cli.js',
-      'test/test.js',
-      '.gitignore',
-      '.jshintrc',
-      '.travis.yml',
-      '.editorconfig',
-      'Gruntfile.js',
-      'package.json',
-      'README.md'
-    ];
-
-    helpers.mockPrompt(this.app, {
-      'name': 'mymodule',
-      'description': 'awesome module',
-      'pkgName': false,
-      'license': 'MIT',
-      'homepage': 'http://yeoman.io',
-      'githubUsername': 'octocat',
-      'authorName': 'Octo Cat',
-      'authorEmail': 'octo@example.com',
-      'authorUrl': 'http://yeoman.io',
-      'keywords': 'keyword1,keyword2,keyword3',
-      'cli': true,
-      'browser': true
-    });
-
-    shelljs.exec('npm install meow', {silent: true});
-
-    this.app.run(function () {
-      assert.file(expected);
-      assert.fileContent('package.json', /"name": "mymodule"/);
-      assert.deepEqual(require('./temp/cli.js'), {});
-      done();
-    });
-
-  });
-
   it('creates expected files without cli', function (done) {
     var expected = [
       'index.js',
-      'test/test.js',
+      'lib/mymodule.js',
+      'test/mymodule.js',
       '.gitignore',
+      '.npmignore',
       '.jshintrc',
       '.travis.yml',
-      'Gruntfile.js',
+      '.editorconfig',
+      'Makefile',
       'package.json',
-      'README.md'
+      'Readme.md'
     ];
 
     helpers.mockPrompt(this.app, {
@@ -82,9 +44,7 @@ describe('node generator', function () {
       'authorName': 'Octo Cat',
       'authorEmail': 'octo@example.com',
       'authorUrl': 'http://yeoman.io',
-      'keywords': 'keyword1,keyword2,keyword3',
-      'cli': false,
-      'browser': true
+      'keywords': 'keyword1,keyword2,keyword3'
     });
 
     this.app.run(function () {

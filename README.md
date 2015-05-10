@@ -1,26 +1,37 @@
-# Node Generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-node.svg?branch=master)](https://travis-ci.org/yeoman/generator-node)
+# Node with Makefile Generator
 
-> Create a Node.js module
-
-Maintained by [Hemanth.HM](http://github.com/hemanth).
-
+Create a Node.js module with Makefile. Forked from [generator-node]
 
 ## Install
 
 ```sh
-$ npm install --global generator-node
+$ npm install --global generator-node-make
 ```
-
 
 ## Usage
 
 ```sh
-$ yo node
+$ mkdir my-new-module
+$ cd my-new-module
+$ yo node-make
+
+# to run jshint and mocha tests
+$ make
 ```
 
-*Note that this template will generate files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files.*
+Creates node module scafolding with [jshint], [mocha], [should] for testing, [travis] for CI,
+[gemnasium] for dependency monitoring.
+Generates `.editorconfit`, `.gitignore`, `.npmignore`.
 
+`make check` - is automatically added - lints and runs mocha tests
 
 ## License
 
 MIT © Yeoman team
+
+[generator-node]: https://www.npmjs.com/package/generator-node
+[mocha]: http://mochajs.org
+[jshint]: http://jshint.com
+[travis]: https://travis-ci.org
+[should]: https://www.npmjs.com/package/should
+[gemnasium]: https://gemnasium.com

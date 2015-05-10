@@ -1,10 +1,9 @@
-'use strict';
-var assert = require('assert');
+var should = require('should');
 var <%= safeSlugname %> = require('../');
 
 describe('<%= slugname %> node module', function () {
   it('must have at least one test', function () {
     <%= safeSlugname %>();
-    assert(false, 'I was too lazy to write any tests. Shame on me.');
+    should.fail('Need to write tests.');
   });
 });
