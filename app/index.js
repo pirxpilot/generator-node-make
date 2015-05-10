@@ -71,22 +71,18 @@ module.exports = yeoman.generators.Base.extend({
       name: 'githubUsername',
       message: 'GitHub username or organization',
       default: this.gitConfig.github.user,
-      store: true
     }, {
       name: 'authorName',
       message: 'Author\'s Name',
       default: this.gitConfig.user.name,
-      store: true
     }, {
       name: 'authorEmail',
       default: this.gitConfig.user.email,
       message: 'Author\'s Email',
-      store: true
     }, {
       name: 'authorUrl',
       message: 'Author\'s Homepage',
       default: this.gitConfig.user.homepage,
-      store: true
     }, {
       name: 'keywords',
       message: 'Key your keywords (comma to split)'
