@@ -25,7 +25,6 @@ describe('node generator', function () {
       'lib/mymodule.js',
       'test/mymodule.js',
       '.gitignore',
-      '.npmignore',
       '.jshintrc',
       '.travis.yml',
       '.editorconfig',

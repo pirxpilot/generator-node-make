@@ -18,5 +18,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "make check"
-  }
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ]
 }
