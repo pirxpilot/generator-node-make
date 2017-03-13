@@ -69,7 +69,7 @@ module.exports = Generator.extend({
 
       return this.prompt(prompts).then(function (props) {
         if (props.githubUsername) {
-          this.repoUrl = props.githubUsername + '/' + this.slugname;
+          this.repoUrl = props.githubUsername + '/' + this.props.name;
         } else {
           this.repoUrl = 'user/repo';
         }

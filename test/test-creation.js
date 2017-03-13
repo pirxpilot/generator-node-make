@@ -39,6 +39,7 @@ describe('node generator', function () {
     ];
     assert.file(expected);
     assert.jsonFileContent('package.json', { name: 'xyz-test-mymodule' });
+    assert.jsonFileContent('package.json', { repository: 'octocat/xyz-test-mymodule' });
     assert.fileContent('lib/xyz-test-mymodule.js', 'function xyzTestMymodule()');
   });
 });
