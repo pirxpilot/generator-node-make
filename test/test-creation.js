@@ -1,29 +1,34 @@
 'use strict';
 var path = require('path');
-var assert = require('yeoman-generator').assert;
-var helpers = require('yeoman-generator').test;
+var assert = require('yeoman-assert');
+var helpers = require('yeoman-test');
 
 describe('node generator', function () {
-  beforeEach(function (done) {
-    helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
-      if (err) {
-        done(err);
-        return;
-      }
-
-      this.app = helpers.createGenerator('node-make:app', [
-        '../../app'
-      ]);
-      this.app.options['skip-install'] = true;
-      done();
-    }.bind(this));
+  beforeEach(function () {
+    return helpers
+      .run(path.join(__dirname, '../app'))
+      .withOptions({
+        'skip-install': true
+      })
+      .withPrompts({
+        'name': 'xyz-test-mymodule',
+        'description': 'awesome module',
+        'pkgName': false,
+        'license': 'MIT',
+        'homepage': 'http://yeoman.io',
+        'githubUsername': 'octocat',
+        'authorName': 'Octo Cat',
+        'authorEmail': 'octo@example.com',
+        'authorUrl': 'http://yeoman.io',
+        'keywords': 'keyword1,keyword2,keyword3'
+      });
   });
 
-  it('creates expected files without cli', function (done) {
+  it('creates expected', function () {
     var expected = [
       'index.js',
-      'lib/mymodule.js',
-      'test/mymodule.js',
+      'lib/xyz-test-mymodule.js',
+      'test/xyz-test-mymodule.js',
       '.gitignore',
       '.jshintrc',
       '.travis.yml',
@@ -32,24 +37,8 @@ describe('node generator', function () {
       'package.json',
       'Readme.md'
     ];
-
-    helpers.mockPrompt(this.app, {
-      'name': 'mymodule',
-      'description': 'awesome module',
-      'pkgName': false,
-      'license': 'MIT',
-      'homepage': 'http://yeoman.io',
-      'githubUsername': 'octocat',
-      'authorName': 'Octo Cat',
-      'authorEmail': 'octo@example.com',
-      'authorUrl': 'http://yeoman.io',
-      'keywords': 'keyword1,keyword2,keyword3'
-    });
-
-    this.app.run(function () {
-      assert.file(expected);
-      assert.fileContent('package.json', /"name": "mymodule"/);
-      done();
-    });
+    assert.file(expected);
+    assert.jsonFileContent('package.json', { name: 'xyz-test-mymodule' });
+    assert.fileContent('lib/xyz-test-mymodule.js', 'function xyzTestMymodule()');
   });
 });

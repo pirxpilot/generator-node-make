@@ -21,12 +21,16 @@
     "test": "mocha --timeout 50000"
   },
   "dependencies": {
-    "git-config": "0.0.6",
-    "npm-name": "^1.0.2",
-    "yeoman-generator": "^0.18.3"
+    "git-config": "^0.0.7",
+    "inquirer-npm-name": "^2.0.0",
+    "lodash": "^4.17.4",
+    "yeoman-generator": "^1.1.1",
+    "yosay": "^2.0.0"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
   },
   "engines": {
     "node": ">=0.10.0",
