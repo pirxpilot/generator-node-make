@@ -1,4 +1,10 @@
 
+1.0.2 / 2018-05-16
+==================
+
+ * switch from gemnasium to david
+ * switch default travis confit to stable + lts
+
 1.0.1 / 2017-03-13
 ==================
 
