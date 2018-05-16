@@ -1,6 +1,7 @@
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
-[![Dependency Status][gemnasium-image]][gemnasium-url]
+[![Dependency Status][deps-image]][deps-url]
+[![Dev Dependency Status][deps-dev-image]][deps-dev-url]
 
 # <%= slugname %>
 
@@ -40,5 +41,8 @@ $ npm run browser
 [travis-url]: https://travis-ci.org/<%= props.githubUsername %>/<%= slugname %>
 [travis-image]: https://img.shields.io/travis/<%= props.githubUsername %>/<%= slugname %>.svg
 
-[gemnasium-image]: https://img.shields.io/gemnasium/<%= props.githubUsername %>/<%= slugname %>.svg
-[gemnasium-url]: https://gemnasium.com/<%= props.githubUsername %>/<%= slugname %>
+[deps-image]: https://img.shields.io/david/<%= props.githubUsername %>/<%= slugname %>.svg
+[deps-url]: https://david-dm.org/<%= props.githubUsername %>/<%= slugname %>
+
+[deps-dev-image]: https://img.shields.io/david/dev/<%= props.githubUsername %>/<%= slugname %>.svg
+[deps-dev-url]: https://david-dm.org/<%= props.githubUsername %>/<%= slugname %>?type=dev
