@@ -1,7 +1,6 @@
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-image]][build-url]
 [![Dependency Status][deps-image]][deps-url]
-[![Dev Dependency Status][deps-dev-image]][deps-dev-url]
 
 # <%= slugname %>
 
@@ -38,11 +37,8 @@ $ npm run browser
 [npm-image]: https://img.shields.io/npm/v/<%= slugname %>.svg
 [npm-url]: https://npmjs.org/package/<%= slugname %>
 
-[travis-url]: https://travis-ci.org/<%= props.githubUsername %>/<%= slugname %>
-[travis-image]: https://img.shields.io/travis/<%= props.githubUsername %>/<%= slugname %>.svg
+[build-url]: https://github.com/<%= props.githubUsername %>/<%= slugname %>/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/workflow/status/<%= props.githubUsername %>/<%= slugname %>/check
 
-[deps-image]: https://img.shields.io/david/<%= props.githubUsername %>/<%= slugname %>.svg
-[deps-url]: https://david-dm.org/<%= props.githubUsername %>/<%= slugname %>
-
-[deps-dev-image]: https://img.shields.io/david/dev/<%= props.githubUsername %>/<%= slugname %>.svg
-[deps-dev-url]: https://david-dm.org/<%= props.githubUsername %>/<%= slugname %>?type=dev
+[deps-image]: https://img.shields.io/librariesio/release/npm/<%= slugname %>
+[deps-url]: https://libraries.io/npm/<%= slugname %>

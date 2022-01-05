@@ -1,9 +1,8 @@
-'use strict';
-var assert  = require('assert');
+const assert  = require('assert');
 
-describe('node generator', function () {
-  it('can be imported without blowing up', function () {
-    var app = require('../app');
+describe('node generator', () => {
+  it('can be imported without blowing up', () => {
+    const app = require('../app');
     assert(app !== undefined);
   });
 });

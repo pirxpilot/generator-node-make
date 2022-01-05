@@ -1,10 +1,9 @@
-'use strict';
-var path = require('path');
-var assert = require('yeoman-assert');
-var helpers = require('yeoman-test');
+const path = require('path');
+const assert = require('yeoman-assert');
+const helpers = require('yeoman-test');
 
-describe('node generator', function () {
-  beforeEach(function () {
+describe('node generator', () => {
+  beforeEach(() => {
     return helpers
       .run(path.join(__dirname, '../app'))
       .withOptions({
@@ -24,14 +23,14 @@ describe('node generator', function () {
       });
   });
 
-  it('creates expected', function () {
-    var expected = [
+  it('creates expected', () => {
+    const expected = [
       'index.js',
       'lib/xyz-test-mymodule.js',
       'test/xyz-test-mymodule.js',
       '.gitignore',
       '.jshintrc',
-      '.travis.yml',
+      '.github/workflows/check.yaml',
       '.editorconfig',
       'Makefile',
       'package.json',
@@ -40,6 +39,12 @@ describe('node generator', function () {
     assert.file(expected);
     assert.jsonFileContent('package.json', { name: 'xyz-test-mymodule' });
     assert.jsonFileContent('package.json', { repository: 'octocat/xyz-test-mymodule' });
+    assert.jsonFileContent('package.json', {
+      devDependencies: {
+        jshint: '~2',
+        tape: '~5'
+      }
+    });
     assert.fileContent('lib/xyz-test-mymodule.js', 'function xyzTestMymodule()');
   });
 });
