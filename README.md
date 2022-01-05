@@ -1,3 +1,7 @@
+[![NPM version][npm-image]][npm-url]
+[![Build Status][build-image]][build-url]
+[![Dependency Status][deps-image]][deps-url]
+
 # Node with Makefile Generator
 
 Create a Node.js module with Makefile. Forked from [generator-node]
@@ -35,3 +39,12 @@ MIT © Yeoman team
 [travis]: https://travis-ci.org
 [should]: https://www.npmjs.com/package/should
 [gemnasium]: https://gemnasium.com
+
+[npm-image]: https://img.shields.io/npm/v/generator-node-make.svg
+[npm-url]: https://npmjs.org/package/generator-node-make
+
+[build-url]: https://github.com/pirxpilot/generator-node-make/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/workflow/status/pirxpilot/generator-node-make/check
+
+[deps-image]: https://img.shields.io/librariesio/release/npm/generator-node-make
+[deps-url]: https://libraries.io/npm/generator-node-make
