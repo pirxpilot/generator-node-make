@@ -96,8 +96,7 @@ module.exports = class extends Generator {
 
     await this.addDevDependencies({
       jshint: '~2',
-      mocha: '~9',
-      should: '~13'
+      tape: '~5'
     });
   }
 

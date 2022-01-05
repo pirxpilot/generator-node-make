@@ -23,7 +23,7 @@ $ yo node-make
 $ make
 ```
 
-Creates node module scafolding with [jshint], [mocha], [should] for testing, [github actions] for CI,
+Creates node module scafolding with [jshint], [tape] for testing, [github actions] for CI,
 [libraries.io] for dependency monitoring.
 
 Generates `.editorconfit`, `.gitignore`, `.npmignore`.
@@ -35,9 +35,8 @@ Generates `.editorconfit`, `.gitignore`, `.npmignore`.
 MIT © Yeoman team
 
 [generator-node]: https://www.npmjs.com/package/generator-node
-[mocha]: http://mochajs.org
 [jshint]: http://jshint.com
-[should]: https://www.npmjs.com/package/should
+[tape]: https://www.npmjs.com/package/tape
 [libraries.io]: https://libraries.io
 [github actions]: https://github.com/features/actions
 

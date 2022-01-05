@@ -42,8 +42,7 @@ describe('node generator', () => {
     assert.jsonFileContent('package.json', {
       devDependencies: {
         jshint: '~2',
-        mocha: '~9',
-        should: '~13'
+        tape: '~5'
       }
     });
     assert.fileContent('lib/xyz-test-mymodule.js', 'function xyzTestMymodule()');
