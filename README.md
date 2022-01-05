@@ -23,8 +23,9 @@ $ yo node-make
 $ make
 ```
 
-Creates node module scafolding with [jshint], [mocha], [should] for testing, [travis] for CI,
-[gemnasium] for dependency monitoring.
+Creates node module scafolding with [jshint], [mocha], [should] for testing, [github actions] for CI,
+[libraries.io] for dependency monitoring.
+
 Generates `.editorconfit`, `.gitignore`, `.npmignore`.
 
 `make check` - is automatically added - lints and runs mocha tests
@@ -36,9 +37,9 @@ MIT © Yeoman team
 [generator-node]: https://www.npmjs.com/package/generator-node
 [mocha]: http://mochajs.org
 [jshint]: http://jshint.com
-[travis]: https://travis-ci.org
 [should]: https://www.npmjs.com/package/should
-[gemnasium]: https://gemnasium.com
+[libraries.io]: https://libraries.io
+[github actions]: https://github.com/features/actions
 
 [npm-image]: https://img.shields.io/npm/v/generator-node-make.svg
 [npm-url]: https://npmjs.org/package/generator-node-make

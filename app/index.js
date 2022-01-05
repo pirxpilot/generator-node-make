@@ -82,7 +82,7 @@ module.exports = class extends Generator {
     this._copy('editorconfig', '.editorconfig');
     this._copy('jshintrc', '.jshintrc');
     this._copy('gitignore', '.gitignore');
-    this._copy('travis.yml', '.travis.yml');
+    this._copy('github/workflows/check.yaml', '.github/workflows/check.yaml');
 
     this._template('Readme.md', 'Readme.md');
     this._template('History.md', 'History.md');

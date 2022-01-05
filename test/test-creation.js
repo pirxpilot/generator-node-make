@@ -30,7 +30,7 @@ describe('node generator', () => {
       'test/xyz-test-mymodule.js',
       '.gitignore',
       '.jshintrc',
-      '.travis.yml',
+      '.github/workflows/check.yaml',
       '.editorconfig',
       'Makefile',
       'package.json',
