@@ -1,4 +1,13 @@
 
+2.0.0 / 2022-01-05
+==================
+
+ * use tape instead of mocha/should in generated project
+ * setup generated project for github actions
+ * replace Travis CI with github actions
+ * upgrade to yeoman-generator@~5
+ * update inquirer-npm-name to ~4
+
 1.0.2 / 2018-05-16
 ==================
 
