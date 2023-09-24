@@ -1,3 +1,4 @@
+const { describe, it, beforeEach } = require('node:test');
 const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
@@ -41,8 +42,7 @@ describe('node generator', () => {
     assert.jsonFileContent('package.json', { repository: 'octocat/xyz-test-mymodule' });
     assert.jsonFileContent('package.json', {
       devDependencies: {
-        jshint: '~2',
-        tape: '~5'
+        jshint: '~2'
       }
     });
     assert.fileContent('lib/xyz-test-mymodule.js', 'function xyzTestMymodule()');

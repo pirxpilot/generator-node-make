@@ -19,11 +19,11 @@ $ mkdir my-new-module
 $ cd my-new-module
 $ yo node-make
 
-# to run jshint and mocha tests
+# to run jshint and tests
 $ make
 ```
 
-Creates node module scafolding with [jshint], [tape] for testing, [github actions] for CI,
+Creates node module scafolding with [jshint], [node test runner] for testing, [github actions] for CI,
 [libraries.io] for dependency monitoring.
 
 Generates `.editorconfit`, `.gitignore`, `.npmignore`.
@@ -36,15 +36,15 @@ MIT © Yeoman team
 
 [generator-node]: https://www.npmjs.com/package/generator-node
 [jshint]: http://jshint.com
-[tape]: https://www.npmjs.com/package/tape
+[node test runner]: https://nodejs.org/api/test.html
 [libraries.io]: https://libraries.io
 [github actions]: https://github.com/features/actions
 
-[npm-image]: https://img.shields.io/npm/v/generator-node-make.svg
+[npm-image]: https://img.shields.io/npm/v/generator-node-make
 [npm-url]: https://npmjs.org/package/generator-node-make
 
 [build-url]: https://github.com/pirxpilot/generator-node-make/actions/workflows/check.yaml
-[build-image]: https://img.shields.io/github/workflow/status/pirxpilot/generator-node-make/check
+[build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/generator-node-make/check.yaml?branch=main
 
 [deps-image]: https://img.shields.io/librariesio/release/npm/generator-node-make
 [deps-url]: https://libraries.io/npm/generator-node-make

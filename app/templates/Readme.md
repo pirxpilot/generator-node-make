@@ -34,11 +34,11 @@ $ npm run browser
 
 <%= props.license %> © [<%= props.authorName %>](<%= props.authorUrl %>)
 
-[npm-image]: https://img.shields.io/npm/v/<%= slugname %>.svg
+[npm-image]: https://img.shields.io/npm/v/<%= slugname %>
 [npm-url]: https://npmjs.org/package/<%= slugname %>
 
 [build-url]: https://github.com/<%= props.githubUsername %>/<%= slugname %>/actions/workflows/check.yaml
-[build-image]: https://img.shields.io/github/workflow/status/<%= props.githubUsername %>/<%= slugname %>/check
+[build-image]: https://img.shields.io/github/actions/workflow/status/<%= props.githubUsername %>/<%= slugname %>/check.yaml?branch=main
 
 [deps-image]: https://img.shields.io/librariesio/release/npm/<%= slugname %>
 [deps-url]: https://libraries.io/npm/<%= slugname %>
