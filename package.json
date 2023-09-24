@@ -16,7 +16,10 @@
     "url": "https://pirxpilot.me"
   },
   "main": "app",
-  "repository": "pirxpilot/generator-node-make",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirxpilot/generator-node-make.git"
+  },
   "scripts": {
     "test": "mocha --timeout 50000"
   },
