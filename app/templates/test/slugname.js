@@ -1,8 +1,8 @@
-const test = require('tape');
+const test = require('node:test');
+const assert = require('node:assert/strict');
 const <%= safeSlugname %> = require('../');
 
-test('<%= slugname %> must have at least one test', function (t) {
+test.todo('<%= slugname %> must have at least one test', function () {
   <%= safeSlugname %>();
-  t.fail('Need to write tests.');
-  t.end();
+  assert.fail('Need to write tests.');
 });

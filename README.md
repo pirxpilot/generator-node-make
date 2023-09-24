@@ -19,11 +19,11 @@ $ mkdir my-new-module
 $ cd my-new-module
 $ yo node-make
 
-# to run jshint and mocha tests
+# to run jshint and tests
 $ make
 ```
 
-Creates node module scafolding with [jshint], [tape] for testing, [github actions] for CI,
+Creates node module scafolding with [jshint], [node test runner] for testing, [github actions] for CI,
 [libraries.io] for dependency monitoring.
 
 Generates `.editorconfit`, `.gitignore`, `.npmignore`.
@@ -36,7 +36,7 @@ MIT © Yeoman team
 
 [generator-node]: https://www.npmjs.com/package/generator-node
 [jshint]: http://jshint.com
-[tape]: https://www.npmjs.com/package/tape
+[node test runner]: https://nodejs.org/api/test.html
 [libraries.io]: https://libraries.io
 [github actions]: https://github.com/features/actions
 
