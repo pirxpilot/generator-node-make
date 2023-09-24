@@ -1,4 +1,11 @@
 
+2.1.0 / 2023-09-24
+==================
+
+ * fix link to build status
+ * replace tape with native node test runner
+ * update github actions to v3
+
 2.0.0 / 2022-01-05
 ==================
 
