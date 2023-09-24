@@ -21,7 +21,7 @@
     "url": "git+https://github.com/pirxpilot/generator-node-make.git"
   },
   "scripts": {
-    "test": "mocha --timeout 50000"
+    "test": "node --test test/test*.js"
   },
   "dependencies": {
     "git-config": "^0.0.7",
@@ -31,7 +31,6 @@
     "yosay": "~2"
   },
   "devDependencies": {
-    "mocha": "*",
     "yeoman-assert": "~3",
     "yeoman-environment": "~3",
     "yeoman-test": "~6"

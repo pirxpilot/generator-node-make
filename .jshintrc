@@ -6,7 +6,6 @@
   "immed": true,
   "indent": 2,
   "latedef": true,
-  "mocha" : true,
   "newcap": true,
   "noarg": true,
   "node": true,
