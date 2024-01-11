@@ -42,7 +42,7 @@ describe('node generator', () => {
     assert.jsonFileContent('package.json', { repository: 'octocat/xyz-test-mymodule' });
     assert.jsonFileContent('package.json', {
       devDependencies: {
-        jshint: '~2'
+        '@pirxpilot/jshint': '~3'
       }
     });
     assert.fileContent('lib/xyz-test-mymodule.js', 'function xyzTestMymodule()');

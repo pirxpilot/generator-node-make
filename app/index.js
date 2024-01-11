@@ -95,7 +95,7 @@ module.exports = class extends Generator {
     this._template('test/slugname.js', `test/${this.slugname}.js`);
 
     await this.addDevDependencies({
-      jshint: '~2'
+      '@pirxpilot/jshint': '~3'
     });
   }
 
