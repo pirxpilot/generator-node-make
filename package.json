@@ -35,6 +35,9 @@
     "yeoman-environment": "~3",
     "yeoman-test": "~6"
   },
+  "resolutions": {
+    "**/got": "11.8.6"
+  },
   "engines": {
     "node": ">=0.10.0",
     "npm": ">=1.2.10"
