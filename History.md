@@ -1,4 +1,10 @@
 
+2.2.1 / 2024-02-15
+==================
+
+ * overwrite got module resoultion
+ * soft dependency update
+
 2.2.0 / 2024-01-11
 ==================
 
