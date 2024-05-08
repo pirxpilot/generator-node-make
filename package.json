@@ -1,6 +1,6 @@
 {
   "name": "generator-node-make",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Create a Node.js module with Makefile",
   "keywords": [
     "yeoman-generator",
