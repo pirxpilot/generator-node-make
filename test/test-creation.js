@@ -30,7 +30,7 @@ describe('node generator', () => {
       'lib/xyz-test-mymodule.js',
       'test/xyz-test-mymodule.js',
       '.gitignore',
-      '.jshintrc',
+      'biome.json',
       '.github/workflows/check.yaml',
       '.editorconfig',
       'Makefile',
@@ -42,7 +42,7 @@ describe('node generator', () => {
     assert.jsonFileContent('package.json', { repository: 'octocat/xyz-test-mymodule' });
     assert.jsonFileContent('package.json', {
       devDependencies: {
-        '@pirxpilot/jshint': '~3'
+        '@biomejs/biome': '~1'
       }
     });
     assert.fileContent('lib/xyz-test-mymodule.js', 'function xyzTestMymodule()');
