@@ -1,4 +1,11 @@
 
+2.3.0 / 2025-02-04
+==================
+
+ * add `test-cov` target to basic make
+ * remove unused `cli.js`
+ * use biome for linting and code formating
+
 2.2.2 / 2024-05-08
 ==================
 
