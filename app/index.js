@@ -80,7 +80,7 @@ module.exports = class extends Generator {
     this.config.save();
 
     this._copy('editorconfig', '.editorconfig');
-    this._copy('jshintrc', '.jshintrc');
+    this._copy('biome.json', 'biome.json');
     this._copy('gitignore', '.gitignore');
     this._copy('github/workflows/check.yaml', '.github/workflows/check.yaml');
 
@@ -95,7 +95,7 @@ module.exports = class extends Generator {
     this._template('test/slugname.js', `test/${this.slugname}.js`);
 
     await this.addDevDependencies({
-      '@pirxpilot/jshint': '~3'
+      '@biomejs/biome': '~1'
     });
   }
 
