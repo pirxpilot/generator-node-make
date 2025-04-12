@@ -1,8 +1,8 @@
-const path = require('path');
-const Generator = require('yeoman-generator');
+const path = require('node:path');
+const { default: Generator } = require('yeoman-generator');
 const gitConfig = require('git-config');
 const askName = require('inquirer-npm-name');
-const yosay = require('yosay');
+const { default: yosay } = require('yosay');
 const _ = require('lodash');
 
 module.exports = class extends Generator {

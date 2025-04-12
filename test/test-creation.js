@@ -1,7 +1,7 @@
 const { describe, it, beforeEach } = require('node:test');
 const path = require('node:path');
 const assert = require('yeoman-assert');
-const helpers = require('yeoman-test');
+const { default: helpers } = require('yeoman-test');
 
 describe('node generator', () => {
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('node generator', () => {
       .withOptions({
         'skip-install': true
       })
-      .withPrompts({
+      .withAnswers({
         name: 'xyz-test-mymodule',
         description: 'awesome module',
         pkgName: false,
