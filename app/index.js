@@ -21,15 +21,18 @@ export default class extends Generator {
       {
         name: 'name',
         message: 'Module Name',
-        default: path.basename(process.cwd()),
-        filter: _.kebabCase,
-        validate({ length }) {
-          return length > 0;
-        }
+        default: path.basename(process.cwd())
       },
       this
     );
     this.props.name = name;
+    if (name.startsWith('@')) {
+      const [scope, localName] = name.slice(1).split('/');
+      this.props.scope = scope;
+      this.props.localName = localName;
+    } else {
+      this.props.localName = name;
+    }
 
     const prompts = [
       {
@@ -76,7 +79,7 @@ export default class extends Generator {
 
     const props = await this.prompt(prompts);
     if (props.githubUsername) {
-      this.repoUrl = `${props.githubUsername}/${this.props.name}`;
+      this.repoUrl = `${props.githubUsername}/${this.props.localName}`;
     } else {
       this.repoUrl = 'user/repo';
     }
@@ -88,7 +91,7 @@ export default class extends Generator {
 
   async writing() {
     // app
-    this.slugname = _.kebabCase(this.props.name);
+    this.slugname = _.kebabCase(this.props.localName);
     this.safeSlugname = _.camelCase(this.slugname);
 
     this.config.save();

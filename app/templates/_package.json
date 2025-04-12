@@ -1,5 +1,5 @@
 {
-  "name": "<%= slugname %>",
+  "name": "<%= props.name %>",
   "version": "0.0.0",
   "description": "<%= props.description %>",<% if (props.homepage) { %>
   "homepage": "<%= props.homepage %>",<% } %>
