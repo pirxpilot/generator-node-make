@@ -1,9 +1,9 @@
-const { describe, it } = require('node:test');
-const assert  = require('node:assert');
+import assert from 'node:assert';
+import { describe, it } from 'node:test';
 
 describe('node generator', () => {
-  it('can be imported without blowing up', () => {
-    const app = require('../app');
+  it('can be imported without blowing up', async () => {
+    const app = await import('../app/index.js');
     assert(app !== undefined);
   });
 });

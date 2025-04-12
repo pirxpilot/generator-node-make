@@ -15,7 +15,8 @@
     "email": "pirxpilot@code42day.com",
     "url": "https://pirxpilot.me"
   },
-  "main": "app",
+  "type": "module",
+  "exports": "./app/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pirxpilot/generator-node-make.git"

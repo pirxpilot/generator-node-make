@@ -1,12 +1,12 @@
-const { describe, it, beforeEach } = require('node:test');
-const path = require('node:path');
-const assert = require('yeoman-assert');
-const { default: helpers } = require('yeoman-test');
+import path from 'node:path';
+import { beforeEach, describe, it } from 'node:test';
+import assert from 'yeoman-assert';
+import helpers from 'yeoman-test';
 
 describe('node generator', () => {
   beforeEach(() => {
     return helpers
-      .run(path.join(__dirname, '../app'))
+      .run(path.resolve(import.meta.dirname, '../app'))
       .withOptions({
         'skip-install': true
       })
