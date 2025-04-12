@@ -1,5 +1,5 @@
 const { describe, it, beforeEach } = require('node:test');
-const path = require('path');
+const path = require('node:path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
@@ -11,22 +11,21 @@ describe('node generator', () => {
         'skip-install': true
       })
       .withPrompts({
-        'name': 'xyz-test-mymodule',
-        'description': 'awesome module',
-        'pkgName': false,
-        'license': 'MIT',
-        'homepage': 'http://yeoman.io',
-        'githubUsername': 'octocat',
-        'authorName': 'Octo Cat',
-        'authorEmail': 'octo@example.com',
-        'authorUrl': 'http://yeoman.io',
-        'keywords': 'keyword1,keyword2,keyword3'
+        name: 'xyz-test-mymodule',
+        description: 'awesome module',
+        pkgName: false,
+        license: 'MIT',
+        homepage: 'http://yeoman.io',
+        githubUsername: 'octocat',
+        authorName: 'Octo Cat',
+        authorEmail: 'octo@example.com',
+        authorUrl: 'http://yeoman.io',
+        keywords: 'keyword1,keyword2,keyword3'
       });
   });
 
   it('creates expected', () => {
     const expected = [
-      'index.js',
       'lib/xyz-test-mymodule.js',
       'test/xyz-test-mymodule.js',
       '.gitignore',
@@ -39,7 +38,13 @@ describe('node generator', () => {
     ];
     assert.file(expected);
     assert.jsonFileContent('package.json', { name: 'xyz-test-mymodule' });
-    assert.jsonFileContent('package.json', { repository: 'octocat/xyz-test-mymodule' });
+    assert.jsonFileContent('package.json', { main: './lib/xyz-test-mymodule.js' });
+    assert.jsonFileContent('package.json', {
+      repository: {
+        type: 'git',
+        url: 'git+https://github.com/octocat/xyz-test-mymodule.git'
+      }
+    });
     assert.jsonFileContent('package.json', {
       devDependencies: {
         '@biomejs/biome': '~1'

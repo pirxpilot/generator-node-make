@@ -8,7 +8,11 @@
     "email": "<%= props.authorEmail %>"<% if (props.authorUrl) { %>,
     "url": "<%= props.authorUrl %>"<% } %>
   },
-  "repository": "<%= repoUrl %>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= repoUrl %>.git"
+  },
+  "main": "./lib/<%= slugname %>.js",
   "license": "<%= props.license %>",
   "keywords": [
     "<%= slugname %>"<% for (var i = 0; i < keywords.length; i++) { %>,
