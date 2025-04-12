@@ -8,7 +8,10 @@
     "email": "<%= props.authorEmail %>"<% if (props.authorUrl) { %>,
     "url": "<%= props.authorUrl %>"<% } %>
   },
-  "repository": "<%= repoUrl %>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= repoUrl %>.git"
+  },
   "main": "./lib/<%= slugname %>.js",
   "license": "<%= props.license %>",
   "keywords": [
