@@ -38,7 +38,7 @@ describe('node generator', () => {
     ];
     assert.file(expected);
     assert.jsonFileContent('package.json', { name: 'xyz-test-mymodule' });
-    assert.jsonFileContent('package.json', { main: './lib/xyz-test-mymodule.js' });
+    assert.jsonFileContent('package.json', { exports: './lib/xyz-test-mymodule.js' });
     assert.jsonFileContent('package.json', {
       repository: {
         type: 'git',

@@ -12,7 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/<%= repoUrl %>.git"
   },
-  "main": "./lib/<%= slugname %>.js",
+  "type": "module",
+  "exports": "./lib/<%= slugname %>.js",
   "license": "<%= props.license %>",
   "keywords": [
     "<%= slugname %>"<% for (var i = 0; i < keywords.length; i++) { %>,
