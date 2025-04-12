@@ -9,56 +9,68 @@ module.exports = class extends Generator {
   initializing() {
     this.env.options.nodePackageManager = 'yarn';
     this.pkg = require('../package.json');
-    this.log(yosay(`Nice names only please`));
+    this.log(yosay('Nice names only please'));
     this.gitConfig = gitConfig.sync();
     this.props = {};
   }
 
   async prompting() {
-    const { name } = await askName({
-      name: 'name',
-      message: 'Module Name',
-      default: path.basename(process.cwd()),
-      filter: _.kebabCase,
-      validate({ length }) {
-        return length > 0;
-      }
-    }, this);
+    const { name } = await askName(
+      {
+        name: 'name',
+        message: 'Module Name',
+        default: path.basename(process.cwd()),
+        filter: _.kebabCase,
+        validate({ length }) {
+          return length > 0;
+        }
+      },
+      this
+    );
     this.props.name = name;
 
-    const prompts = [{
-      name: 'description',
-      message: 'Description',
-      default: 'The best module ever.'
-    }, {
-      name: 'homepage',
-      message: 'Homepage'
-    }, {
-      name: 'license',
-      message: 'License',
-      default: 'MIT'
-    }, {
-      name: 'githubUsername',
-      message: 'GitHub username or organization',
-      default: this.gitConfig?.github?.user,
-    }, {
-      name: 'authorName',
-      message: 'Author\'s Name',
-      default: this.gitConfig?.user?.name,
-    }, {
-      name: 'authorEmail',
-      default: this.gitConfig?.user?.email,
-      message: 'Author\'s Email',
-    }, {
-      name: 'authorUrl',
-      message: 'Author\'s Homepage',
-      default: this.gitConfig?.user?.homepage,
-    }, {
-      name: 'keywords',
-      message: 'Key your keywords (comma to split)'
-    }];
+    const prompts = [
+      {
+        name: 'description',
+        message: 'Description',
+        default: 'The best module ever.'
+      },
+      {
+        name: 'homepage',
+        message: 'Homepage'
+      },
+      {
+        name: 'license',
+        message: 'License',
+        default: 'MIT'
+      },
+      {
+        name: 'githubUsername',
+        message: 'GitHub username or organization',
+        default: this.gitConfig?.github?.user
+      },
+      {
+        name: 'authorName',
+        message: "Author's Name",
+        default: this.gitConfig?.user?.name
+      },
+      {
+        name: 'authorEmail',
+        default: this.gitConfig?.user?.email,
+        message: "Author's Email"
+      },
+      {
+        name: 'authorUrl',
+        message: "Author's Homepage",
+        default: this.gitConfig?.user?.homepage
+      },
+      {
+        name: 'keywords',
+        message: 'Key your keywords (comma to split)'
+      }
+    ];
 
-    this.currentYear = (new Date()).getFullYear();
+    this.currentYear = new Date().getFullYear();
 
     const props = await this.prompt(prompts);
     if (props.githubUsername) {
@@ -90,7 +102,6 @@ module.exports = class extends Generator {
     this._template('_package.json', 'package.json');
 
     // project files
-    this._template('index.js', 'index.js');
     this._template('lib/slugname.js', `lib/${this.slugname}.js`);
     this._template('test/slugname.js', `test/${this.slugname}.js`);
 
@@ -100,17 +111,10 @@ module.exports = class extends Generator {
   }
 
   _copy(source, destination) {
-    this.fs.copy(
-      this.templatePath(source),
-      this.destinationPath(destination)
-    );
+    this.fs.copy(this.templatePath(source), this.destinationPath(destination));
   }
 
   _template(template, destination) {
-    this.fs.copyTpl(
-      this.templatePath(template),
-      this.destinationPath(destination),
-      this
-    );
+    this.fs.copyTpl(this.templatePath(template), this.destinationPath(destination), this);
   }
 };
