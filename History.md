@@ -1,4 +1,12 @@
 
+2.3.1 / 2025-04-12
+==================
+
+ * generate full `package.repository` fields
+ * stop generating empty index.js file
+ * adjust editorconfig
+ * adjust biome config
+
 2.3.0 / 2025-02-04
 ==================
 
