@@ -9,13 +9,13 @@
 ## Install
 
 ```sh
-$ npm install --save <%= slugname %>
+$ npm install --save <%= props.name %>
 ```
 
 ## Usage
 
 ```js
-var <%= safeSlugname %> = require('<%= slugname %>');
+var <%= safeSlugname %> = require('<%= props.name %>');
 
 <%= safeSlugname %>('Rainbow');
 ```<% if (props.cli) { %>
@@ -34,11 +34,11 @@ $ npm run browser
 
 <%= props.license %> © [<%= props.authorName %>](<%= props.authorUrl %>)
 
-[npm-image]: https://img.shields.io/npm/v/<%= slugname %>
-[npm-url]: https://npmjs.org/package/<%= slugname %>
+[npm-image]: https://img.shields.io/npm/v/<%= props.name %>
+[npm-url]: https://npmjs.org/package/<%= props.name %>
 
 [build-url]: https://github.com/<%= props.githubUsername %>/<%= slugname %>/actions/workflows/check.yaml
 [build-image]: https://img.shields.io/github/actions/workflow/status/<%= props.githubUsername %>/<%= slugname %>/check.yaml?branch=main
 
-[deps-image]: https://img.shields.io/librariesio/release/npm/<%= slugname %>
-[deps-url]: https://libraries.io/npm/<%= slugname %>
+[deps-image]: https://img.shields.io/librariesio/release/npm/<%= props.name %>
+[deps-url]: https://libraries.io/npm/<%= props.name[0] + encodeURIComponent(props.name.slice(1)) %>

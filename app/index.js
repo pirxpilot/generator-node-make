@@ -1,14 +1,16 @@
-const path = require('path');
-const Generator = require('yeoman-generator');
-const gitConfig = require('git-config');
-const askName = require('inquirer-npm-name');
-const yosay = require('yosay');
-const _ = require('lodash');
+import path from 'node:path';
+import gitConfig from 'git-config';
+import askName from 'inquirer-npm-name';
+import _ from 'lodash';
+import Generator from 'yeoman-generator';
+import yosay from 'yosay';
 
-module.exports = class extends Generator {
+import pkg from '../package.json' with { type: 'json' };
+
+export default class extends Generator {
   initializing() {
     this.env.options.nodePackageManager = 'yarn';
-    this.pkg = require('../package.json');
+    this.pkg = pkg;
     this.log(yosay('Nice names only please'));
     this.gitConfig = gitConfig.sync();
     this.props = {};
@@ -19,15 +21,18 @@ module.exports = class extends Generator {
       {
         name: 'name',
         message: 'Module Name',
-        default: path.basename(process.cwd()),
-        filter: _.kebabCase,
-        validate({ length }) {
-          return length > 0;
-        }
+        default: path.basename(process.cwd())
       },
       this
     );
     this.props.name = name;
+    if (name.startsWith('@')) {
+      const [scope, localName] = name.slice(1).split('/');
+      this.props.scope = scope;
+      this.props.localName = localName;
+    } else {
+      this.props.localName = name;
+    }
 
     const prompts = [
       {
@@ -74,7 +79,7 @@ module.exports = class extends Generator {
 
     const props = await this.prompt(prompts);
     if (props.githubUsername) {
-      this.repoUrl = `${props.githubUsername}/${this.props.name}`;
+      this.repoUrl = `${props.githubUsername}/${this.props.localName}`;
     } else {
       this.repoUrl = 'user/repo';
     }
@@ -86,7 +91,7 @@ module.exports = class extends Generator {
 
   async writing() {
     // app
-    this.slugname = _.kebabCase(this.props.name);
+    this.slugname = _.kebabCase(this.props.localName);
     this.safeSlugname = _.camelCase(this.slugname);
 
     this.config.save();
@@ -117,4 +122,4 @@ module.exports = class extends Generator {
   _template(template, destination) {
     this.fs.copyTpl(this.templatePath(template), this.destinationPath(destination), this);
   }
-};
+}

@@ -15,7 +15,8 @@
     "email": "pirxpilot@code42day.com",
     "url": "https://pirxpilot.me"
   },
-  "main": "app",
+  "type": "module",
+  "exports": "./app/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pirxpilot/generator-node-make.git"
@@ -25,18 +26,18 @@
   },
   "dependencies": {
     "git-config": "^0.0.7",
-    "inquirer-npm-name": "^4.0.0",
-    "lodash": "^4.17.4",
-    "yeoman-generator": "~5",
-    "yosay": "~2"
+    "inquirer-npm-name": "~4",
+    "lodash": "~4",
+    "yeoman-generator": "~7",
+    "yosay": "~3"
   },
   "devDependencies": {
     "yeoman-assert": "~3",
-    "yeoman-environment": "~3",
-    "yeoman-test": "~6"
+    "yeoman-environment": "~4",
+    "yeoman-test": "~10"
   },
   "resolutions": {
-    "**/got": "11.8.6"
+    "**/got": "~11"
   },
   "engines": {
     "node": ">=0.10.0",

@@ -1,5 +1,5 @@
-const test = require('node:test');
-const <%= safeSlugname %> = require('../lib/<%= slugname %>');
+import test from 'node:test';
+import <%= safeSlugname %> from '../lib/<%= slugname %>.js';
 
 test.todo('<%= slugname %> must have at least one test', t => {
   <%= safeSlugname %>();

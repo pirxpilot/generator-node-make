@@ -1,4 +1,1 @@
-module.exports = <%= safeSlugname %>;
-
-function <%= safeSlugname %>() {
-}
+export default function <%= safeSlugname %>() {}
