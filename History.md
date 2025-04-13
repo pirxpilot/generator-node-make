@@ -1,4 +1,11 @@
 
+3.0.0 / 2025-04-13
+==================
+
+ * add support for scoped packages
+ * transition to ESM
+ * generate ESM module
+
 2.3.2 / 2025-04-12
 ==================
 
