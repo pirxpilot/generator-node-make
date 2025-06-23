@@ -111,7 +111,7 @@ export default class extends Generator {
     this._template('test/slugname.js', `test/${this.slugname}.js`);
 
     await this.addDevDependencies({
-      '@biomejs/biome': '~1'
+      '@biomejs/biome': '2.0.5'
     });
   }
 

@@ -22,7 +22,7 @@
     "url": "git+https://github.com/pirxpilot/generator-node-make.git"
   },
   "scripts": {
-    "test": "node --test test/test*.js"
+    "test": "make check"
   },
   "dependencies": {
     "git-config": "^0.0.7",
@@ -32,6 +32,7 @@
     "yosay": "~3"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.0.5",
     "yeoman-assert": "~3",
     "yeoman-environment": "~4",
     "yeoman-test": "~10"
