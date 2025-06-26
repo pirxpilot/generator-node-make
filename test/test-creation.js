@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { beforeEach, describe, it } from 'node:test';
+import { describe, it } from 'node:test';
 import assert from 'yeoman-assert';
 import helpers from 'yeoman-test';
 
@@ -18,7 +18,9 @@ describe('node generator', () => {
       'Readme.md'
     ]);
     assert.jsonFileContent('package.json', { name: 'xyz-test-mymodule' });
-    assert.jsonFileContent('package.json', { exports: './lib/xyz-test-mymodule.js' });
+    assert.jsonFileContent('package.json', {
+      exports: './lib/xyz-test-mymodule.js'
+    });
     assert.jsonFileContent('package.json', {
       repository: {
         type: 'git',
@@ -27,7 +29,7 @@ describe('node generator', () => {
     });
     assert.jsonFileContent('package.json', {
       devDependencies: {
-        '@biomejs/biome': '~1'
+        '@biomejs/biome': '2.0.5'
       }
     });
     assert.fileContent('lib/xyz-test-mymodule.js', 'export default function xyzTestMymodule()');
@@ -70,7 +72,7 @@ describe('node generator', () => {
     });
     assert.jsonFileContent('package.json', {
       devDependencies: {
-        '@biomejs/biome': '~1'
+        '@biomejs/biome': '2.0.5'
       }
     });
     assert.fileContent('lib/xyz.js', 'export default function xyz()');
