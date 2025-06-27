@@ -1,4 +1,11 @@
 
+3.0.2 / 2025-06-26
+==================
+
+ * add missing biome config
+ * update github actions config
+ * soft dependency update
+
 3.0.1 / 2025-06-26
 ==================
 
