@@ -1,4 +1,9 @@
 
+3.0.3 / 2025-07-21
+==================
+
+ * use local biome schema to facilitate upgrades
+
 3.0.2 / 2025-06-26
 ==================
 
