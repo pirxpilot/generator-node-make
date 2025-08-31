@@ -1,4 +1,10 @@
 
+3.0.4 / 2025-08-31
+==================
+
+ * upgrade github actions
+ * enforce using block statements after `if`, `while` etc.
+
 3.0.3 / 2025-07-21
 ==================
 
