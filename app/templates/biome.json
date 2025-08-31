@@ -44,12 +44,12 @@
         "noForEach": "off"
       },
       "style": {
-        "noParameterAssign": "off",
-        "useDefaultParameterLast": "error",
-        "useSingleVarDeclarator": "error",
         "noUnusedTemplateLiteral": "error",
+        "noUselessElse": "error",
+        "useBlockStatements": "error",
+        "useDefaultParameterLast": "error",
         "useNumberNamespace": "error",
-        "noUselessElse": "error"
+        "useSingleVarDeclarator": "error"
       },
       "performance": {
         "noDelete": "off"
