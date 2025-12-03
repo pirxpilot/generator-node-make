@@ -37,8 +37,10 @@
     "yeoman-environment": "~4",
     "yeoman-test": "~10"
   },
-  "resolutions": {
-    "**/got": "~11"
+  "pnpm": {
+    "overrides": {
+      "got": "~11"
+    }
   },
   "engines": {
     "node": ">=0.10.0",
