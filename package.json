@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "git-config": "^0.0.7",
-    "inquirer-npm-name": "~4",
+    "inquirer-npm-name": "github:pirxpilot/inquirer-npm-name#6c43fdf",
     "lodash": "~4",
     "yeoman-generator": "~7",
     "yosay": "~3"
@@ -35,14 +35,8 @@
     "@biomejs/biome": "2.0.5",
     "yeoman-test": "~11.2.0"
   },
-  "pnpm": {
-    "overrides": {
-      "got": "~11"
-    }
-  },
   "engines": {
-    "node": ">=0.10.0",
-    "npm": ">=1.2.10"
+    "node": ">= 22"
   },
   "files": [
     "app"
