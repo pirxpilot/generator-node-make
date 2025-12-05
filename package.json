@@ -26,23 +26,17 @@
   },
   "dependencies": {
     "git-config": "^0.0.7",
-    "inquirer-npm-name": "~4",
+    "inquirer-npm-name": "github:pirxpilot/inquirer-npm-name#6c43fdf",
     "lodash": "~4",
     "yeoman-generator": "~7",
     "yosay": "~3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.5",
-    "yeoman-assert": "~3",
-    "yeoman-environment": "~4",
-    "yeoman-test": "~10"
-  },
-  "resolutions": {
-    "**/got": "~11"
+    "@biomejs/biome": "2.3.8",
+    "yeoman-test": "~11.2.0"
   },
   "engines": {
-    "node": ">=0.10.0",
-    "npm": ">=1.2.10"
+    "node": ">= 22"
   },
   "files": [
     "app"

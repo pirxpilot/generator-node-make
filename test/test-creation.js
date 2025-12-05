@@ -1,12 +1,11 @@
 import path from 'node:path';
 import { describe, it } from 'node:test';
-import assert from 'yeoman-assert';
-import helpers from 'yeoman-test';
+import helpers, { result } from 'yeoman-test';
 
 describe('node generator', () => {
   it('unscoped name', async () => {
     await runGenerator();
-    assert.file([
+    result.assertFile([
       'lib/xyz-test-mymodule.js',
       'test/xyz-test-mymodule.js',
       '.gitignore',
@@ -17,41 +16,44 @@ describe('node generator', () => {
       'package.json',
       'Readme.md'
     ]);
-    assert.jsonFileContent('package.json', { name: 'xyz-test-mymodule' });
-    assert.jsonFileContent('package.json', {
+    result.assertJsonFileContent('package.json', { name: 'xyz-test-mymodule' });
+    result.assertJsonFileContent('package.json', {
       exports: './lib/xyz-test-mymodule.js'
     });
-    assert.jsonFileContent('package.json', {
+    result.assertJsonFileContent('package.json', {
       repository: {
         type: 'git',
         url: 'git+https://github.com/octocat/xyz-test-mymodule.git'
       }
     });
-    assert.jsonFileContent('package.json', {
+    result.assertJsonFileContent('package.json', {
       devDependencies: {
         '@biomejs/biome': '2.0.5'
       }
     });
-    assert.fileContent('lib/xyz-test-mymodule.js', 'export default function xyzTestMymodule()');
-    assert.fileContent('Readme.md', '[npm-image]: https://img.shields.io/npm/v/xyz-test-mymodule');
-    assert.fileContent('Readme.md', '[npm-url]: https://npmjs.org/package/xyz-test-mymodule');
-    assert.fileContent(
+    result.assertFileContent('lib/xyz-test-mymodule.js', 'export default function xyzTestMymodule()');
+    result.assertFileContent('Readme.md', '[npm-image]: https://img.shields.io/npm/v/xyz-test-mymodule');
+    result.assertFileContent('Readme.md', '[npm-url]: https://npmjs.org/package/xyz-test-mymodule');
+    result.assertFileContent(
       'Readme.md',
       '[build-url]: https://github.com/octocat/xyz-test-mymodule/actions/workflows/check.yaml'
     );
-    assert.fileContent(
+    result.assertFileContent(
       'Readme.md',
       '[build-image]: https://img.shields.io/github/actions/workflow/status/octocat/xyz-test-mymodule/check.yaml?branch=main'
     );
-    assert.fileContent('Readme.md', '[deps-image]: https://img.shields.io/librariesio/release/npm/xyz-test-mymodule');
-    assert.fileContent('Readme.md', '[deps-url]: https://libraries.io/npm/xyz-test-mymodule');
+    result.assertFileContent(
+      'Readme.md',
+      '[deps-image]: https://img.shields.io/librariesio/release/npm/xyz-test-mymodule'
+    );
+    result.assertFileContent('Readme.md', '[deps-url]: https://libraries.io/npm/xyz-test-mymodule');
   });
 
   it('scoped name', async () => {
     await runGenerator({
       name: '@acme/xyz'
     });
-    assert.file([
+    result.assertFile([
       'lib/xyz.js',
       'test/xyz.js',
       '.gitignore',
@@ -62,29 +64,29 @@ describe('node generator', () => {
       'package.json',
       'Readme.md'
     ]);
-    assert.jsonFileContent('package.json', { name: '@acme/xyz' });
-    assert.jsonFileContent('package.json', { exports: './lib/xyz.js' });
-    assert.jsonFileContent('package.json', {
+    result.assertJsonFileContent('package.json', { name: '@acme/xyz' });
+    result.assertJsonFileContent('package.json', { exports: './lib/xyz.js' });
+    result.assertJsonFileContent('package.json', {
       repository: {
         type: 'git',
         url: 'git+https://github.com/octocat/xyz.git'
       }
     });
-    assert.jsonFileContent('package.json', {
+    result.assertJsonFileContent('package.json', {
       devDependencies: {
         '@biomejs/biome': '2.0.5'
       }
     });
-    assert.fileContent('lib/xyz.js', 'export default function xyz()');
-    assert.fileContent('Readme.md', '[npm-image]: https://img.shields.io/npm/v/@acme/xyz');
-    assert.fileContent('Readme.md', '[npm-url]: https://npmjs.org/package/@acme/xyz');
-    assert.fileContent('Readme.md', '[build-url]: https://github.com/octocat/xyz/actions/workflows/check.yaml');
-    assert.fileContent(
+    result.assertFileContent('lib/xyz.js', 'export default function xyz()');
+    result.assertFileContent('Readme.md', '[npm-image]: https://img.shields.io/npm/v/@acme/xyz');
+    result.assertFileContent('Readme.md', '[npm-url]: https://npmjs.org/package/@acme/xyz');
+    result.assertFileContent('Readme.md', '[build-url]: https://github.com/octocat/xyz/actions/workflows/check.yaml');
+    result.assertFileContent(
       'Readme.md',
       '[build-image]: https://img.shields.io/github/actions/workflow/status/octocat/xyz/check.yaml?branch=main'
     );
-    assert.fileContent('Readme.md', '[deps-image]: https://img.shields.io/librariesio/release/npm/@acme/xyz');
-    assert.fileContent('Readme.md', '[deps-url]: https://libraries.io/npm/@acme%2Fxyz');
+    result.assertFileContent('Readme.md', '[deps-image]: https://img.shields.io/librariesio/release/npm/@acme/xyz');
+    result.assertFileContent('Readme.md', '[deps-url]: https://libraries.io/npm/@acme%2Fxyz');
   });
 });
 
