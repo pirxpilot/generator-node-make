@@ -1,4 +1,15 @@
 
+3.0.5 / 2025-12-05
+==================
+
+ * upgrade biome to 2.3.8
+ * upgrade to modern version of `inquirer-npm-name`
+ * remove unused yeoman-environment
+ * remove deprecated yeoman-assert module
+ * upgrade yeoman-test
+ * replace yarn with pnpm
+ * update github actions
+
 3.0.4 / 2025-08-31
 ==================
 
