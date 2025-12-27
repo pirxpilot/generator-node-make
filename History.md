@@ -1,4 +1,10 @@
 
+3.0.6 / 2025-12-27
+==================
+
+ * limit check action scope
+ * add publish action to app/templates
+
 3.0.5 / 2025-12-05
 ==================
 
