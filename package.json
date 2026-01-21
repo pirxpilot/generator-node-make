@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.8",
+    "yeoman-environment": "^5.1.2",
     "yeoman-test": "~11.2.0"
   },
   "engines": {
