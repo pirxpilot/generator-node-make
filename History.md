@@ -1,4 +1,10 @@
 
+3.0.7 / 2026-02-04
+==================
+
+ * enforce project domain rules
+ * add missing `yeoman-environment` package
+
 3.0.6 / 2025-12-27
 ==================
 
