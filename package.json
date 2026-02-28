@@ -28,13 +28,13 @@
     "git-config": "^0.0.7",
     "inquirer-npm-name": "github:pirxpilot/inquirer-npm-name#6c43fdf",
     "lodash": "~4",
-    "yeoman-generator": "~7",
+    "yeoman-generator": "~8",
     "yosay": "~3"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.4",
-    "yeoman-environment": "^5.1.2",
-    "yeoman-test": "~11.2.0"
+    "yeoman-environment": "~6",
+    "yeoman-test": "~11"
   },
   "engines": {
     "node": ">= 22"
