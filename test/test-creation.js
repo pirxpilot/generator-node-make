@@ -28,7 +28,7 @@ describe('node generator', () => {
     });
     result.assertJsonFileContent('package.json', {
       devDependencies: {
-        '@biomejs/biome': '2.0.5'
+        '@biomejs/biome': '2.4.4'
       }
     });
     result.assertFileContent('lib/xyz-test-mymodule.js', 'export default function xyzTestMymodule()');
@@ -74,7 +74,7 @@ describe('node generator', () => {
     });
     result.assertJsonFileContent('package.json', {
       devDependencies: {
-        '@biomejs/biome': '2.0.5'
+        '@biomejs/biome': '2.4.4'
       }
     });
     result.assertFileContent('lib/xyz.js', 'export default function xyz()');
